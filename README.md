@@ -1,3 +1,15 @@
+# Imprortant changes in this build! The problem of 25-th day fixed. 
+The list of changes that lead to the fix:
+
+1) Removed lines that prohibit pushing "future data", the file **com/eveningoutpost/dexdrip/Models/BgReading.java**
+```
+//This is the fix of 25-day libre problem! 
+//if (bgReading.timestamp > new Date().getTime()) { 
+//    return; 
+//}
+```
+ 2) Everywhere **int timestamp** replaced with **long timestamp**, casting to int replaced with casting to long (where it is applicable to time).
+ 
 # Nightscout xDrip+
 > Enhanced personal research version of xDrip
 
