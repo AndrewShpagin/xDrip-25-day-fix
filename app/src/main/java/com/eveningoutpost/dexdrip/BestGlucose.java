@@ -68,8 +68,8 @@ public class BestGlucose {
         }
 
         public String minutesAgo(boolean include_words) {
-            final int minutes = ((int) (this.mssince / 60000));
-            return Integer.toString(minutes) + (include_words ? (((minutes == 1) ? xdrip.getAppContext().getString(R.string.space_minute_ago) : xdrip.getAppContext().getString(R.string.space_minutes_ago))) : "");
+            final long minutes = ((long) ((long)this.mssince / 60000));
+            return Long.toString(minutes) + (include_words ? (((minutes == 1) ? xdrip.getAppContext().getString(R.string.space_minute_ago) : xdrip.getAppContext().getString(R.string.space_minutes_ago))) : "");
         }
 
         // return boolean if data would be considered stale

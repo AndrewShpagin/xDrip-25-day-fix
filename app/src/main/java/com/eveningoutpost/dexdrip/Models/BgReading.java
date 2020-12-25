@@ -346,9 +346,10 @@ public class BgReading extends Model implements ShareUploadableBg {
                 bgReading.raw_data = (sensorRecord.getUnfiltered() / 1000);
                 bgReading.filtered_data = (sensorRecord.getFiltered() / 1000);
                 bgReading.timestamp = sensorRecord.getSystemTime().getTime() + addativeOffset;
-                if (bgReading.timestamp > new Date().getTime()) {
-                    return;
-                }
+                //This is the fix of 25-day libre problem!
+                //if (bgReading.timestamp > new Date().getTime()) {
+                //    return;
+                //}
                 bgReading.uuid = UUID.randomUUID().toString();
                 bgReading.time_since_sensor_started = bgReading.timestamp - sensor.started_at;
                 bgReading.calculateAgeAdjustedRawValue();

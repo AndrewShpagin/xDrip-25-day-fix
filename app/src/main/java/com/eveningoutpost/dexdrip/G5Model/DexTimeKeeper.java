@@ -18,12 +18,12 @@ public class DexTimeKeeper {
     private static String lastTransmitterId = null;
 
     // update the activation time stored for a transmitter
-    public static void updateAge(final String transmitterId, final int dexTimeStamp) {
+    public static void updateAge(final String transmitterId, final long dexTimeStamp) {
         updateAge(transmitterId, dexTimeStamp, false);
     }
 
     // update the activation time stored for a transmitter
-    public static void updateAge(final String transmitterId, final int dexTimeStamp, final boolean absolute) {
+    public static void updateAge(final String transmitterId, final long dexTimeStamp, final boolean absolute) {
 
         if ((transmitterId == null) || (transmitterId.length() != 6)) {
             UserError.Log.e(TAG, "Invalid dex transmitter in updateAge: " + transmitterId);

@@ -13,7 +13,7 @@ import java.nio.ByteOrder;
 public class SensorRxMessage extends BaseMessage {
     public static final byte opcode = 0x2f;
     public TransmitterStatus status;
-    public int timestamp;
+    public long timestamp;
     public int unfiltered;
     public int filtered;
     private final static String TAG = G5CollectionService.TAG; // meh

@@ -2483,7 +2483,7 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
             if(lastReading == 0) {
                 notificationText.setText(R.string.in_libre_all_house_mode_no_readings_collected_yet);
             } else {
-                int minutes = (int) (JoH.tsl() - lastReading) / (60 * 1000);
+                long minutes = (long) (JoH.tsl() - lastReading) / (60 * 1000);
                 final String fmt = getString(R.string.minutes_ago);
                 notificationText.setText(R.string.in_libre_all_house_mode_last_data_collected);
                 notificationText.append(MessageFormat.format(fmt, minutes));
@@ -2938,7 +2938,7 @@ public class Home extends ActivityWithMenu implements ActivityCompat.OnRequestPe
             if (extrastring.length() > 0)
                 currentBgValueText.setText(extrastring + currentBgValueText.getText());
         }
-        int minutes = (int) (System.currentTimeMillis() - lastBgReading.timestamp) / (60 * 1000);
+        long minutes = (long) (System.currentTimeMillis() - lastBgReading.timestamp) / (60 * 1000);
 
         if ((!small_width) || (notificationText.length() > 0)) notificationText.append("\n");
         if (!small_width) {

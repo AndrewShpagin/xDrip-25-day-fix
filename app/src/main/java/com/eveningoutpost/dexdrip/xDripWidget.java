@@ -209,7 +209,7 @@ public class xDripWidget extends AppWidgetProvider {
                 }
 
                 // render information about last value age
-                int timeAgo = (int) Math.floor((new Date().getTime() - lastBgreading.timestamp) / (1000 * 60));
+                long timeAgo = (long) Math.floor((new Date().getTime() - lastBgreading.timestamp) / (1000 * 60));
                 final String fmt = context.getString(R.string.minutes_ago);
                 final String minutesAgo = MessageFormat.format(fmt, timeAgo);
                 views.setTextViewText(R.id.readingAge, minutesAgo + extrastring);

@@ -16,7 +16,7 @@ public abstract class BaseGlucoseRxMessage extends BaseMessage {
 
     public TransmitterStatus status;
     public int status_raw;
-    public int timestamp;
+    public long timestamp;
     public int unfiltered;
     public int filtered;
     public int sequence; // : UInt32
